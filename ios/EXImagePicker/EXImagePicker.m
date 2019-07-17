@@ -294,7 +294,7 @@ UM_EXPORT_METHOD_AS(launchImageLibraryAsync, launchImageLibraryAsync:(NSDictiona
 - (void)handleVideoWithInfo:(NSDictionary * _Nonnull)info saveAt:(NSString *)directory updateResponse:(NSMutableDictionary *)response
 {
   NSURL *videoURL = info[UIImagePickerControllerMediaURL];
-  PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsWithALAssetURLs:@[[info valueForKey:UIImagePickerControllerReferenceURL]] options:nil];
+  PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsWithALAssetURLs:@[[info valueForKey:UIImagePickerControllerMediaURL]] options:nil];
   if (assets.count > 0) {
     PHAsset *videoAsset = assets.firstObject;
     response[@"width"] = @(videoAsset.pixelWidth);
